@@ -2,10 +2,12 @@ import org.apache.commons.codec.binary.Base64;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.time.Duration;
+
 
 public class HomePage extends HelperClass{
 
-    @FindBy(css = ".already-a-member")
+    @FindBy(xpath = "//a[@class=\"already-a-member\"]")
     WebElement logInHere;
 
     @FindBy(css = "#login_email")
@@ -20,9 +22,10 @@ public class HomePage extends HelperClass{
     @FindBy(css = ".greeting")
     WebElement account;
 
-    final int waitTime = 180;
+    final int waitTime = 100;
 
     void logIn(){
+        waitForElement(waitTime,logInHere);
         logInHere.click();
         waitForElement(waitTime, email);
         email.sendKeys("jsaikat22@gmail.com");
@@ -34,12 +37,12 @@ public class HomePage extends HelperClass{
         doubleClick(account);
     }
 
-//    public static void main(String[] args) {
-//        byte[] encoded = Base64.encodeBase64("pass2automate".getBytes());
-//        System.out.println(new String(encoded));
-//
-//        byte[] decoded = Base64.decodeBase64(encoded);
-//        System.out.println(new String(decoded));
-//    }
+    public static void main(String[] args) {
+        byte[] encoded = Base64.encodeBase64("pass2automate".getBytes());
+        System.out.println(new String(encoded));
+
+        byte[] decoded = Base64.decodeBase64(encoded);
+        System.out.println(new String(decoded));
+    }
 
 }

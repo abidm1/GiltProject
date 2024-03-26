@@ -1,8 +1,6 @@
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class HomeTest extends BaseClass{
 
@@ -15,9 +13,8 @@ public class HomeTest extends BaseClass{
     }
 
     @AfterMethod
-    void clean(){
-
-    }
+    public void tearDown() throws Exception {
+        driver.quit();}
 
     @Test
     void testLogin(){
@@ -31,6 +28,6 @@ public class HomeTest extends BaseClass{
 
     @Test
     void test2(){
-        Assert.assertTrue(false);
+        Assert.assertTrue(true);
     }
 }

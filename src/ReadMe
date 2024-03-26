@@ -1,0 +1,16 @@
+Done:
+Added Log4j dependency to remove log4j error in the console
+Updated Selenium Java dependency to the latest version
+Added an AfterMethod, to quit the browser after each test
+Test 2: fixed assertion point, so the expected result == actual result
+Test 3: added synchronization step to wait for the element &  fixed  the locator
+
+
+
+Blockers:
+selenium-devtools-v123   does not exist yet, until an update is released, the console will print this error
+
+
+
+
+
