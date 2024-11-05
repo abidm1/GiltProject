@@ -19,7 +19,7 @@ public class ExtentManager {
         htmlReporter.config().setChartVisibilityOnOpen(true);
         htmlReporter.config().setTheme(Theme.STANDARD);
         htmlReporter.config().setDocumentTitle(fileName);
-        htmlReporter.config().setEncoding("uft-8");
+        htmlReporter.config().setEncoding("utf-8");
         htmlReporter.config().setReportName(fileName);
 
         extent = new ExtentReports();
